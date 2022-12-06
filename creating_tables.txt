@@ -1,0 +1,110 @@
+
+
+
+
+--#creating tables:
+
+
+--#outsource company table
+
+CREATE TABLE outsource_companies(
+company_id varchar(100),
+company_name varchar(100),
+
+primary key(company_id)
+)
+
+
+--#gender table
+
+CREATE TABLE employee_gender(
+gender_code varchar(20),
+primary key(gender_code)
+)
+
+
+
+--#designations table
+
+CREATE TABLE designations(
+role_id varchar(100),
+role_name varchar(100),
+salary int,
+primary key(role_id)
+)
+
+
+
+
+
+
+--#1.onboarding employees table
+ 
+CREATE TABLE onboarding_employees(
+govt_id varchar(50),
+name varchar(100),
+email varchar(100),
+dob varchar(50),
+gender_code varchar(50),
+primary key(govt_id),
+foreign key(gender_code) references employee_gender(gender_code) on delete restrict
+)
+
+
+
+--#2.current employees table
+
+CREATE TABLE current_employees(
+emp_id varchar(100),
+name varchar(100),
+dob varchar(50),
+designation varchar(50),
+gender_code varchar(50),
+primary key(emp_id),
+foreign key(gender_code) references employee_gender(gender_code) on delete restrict,
+foreign key(designation) references designations(roll_id) on delete restrict
+
+)
+
+
+
+--#3.old employees table
+
+CREATE TABLE old_employees(
+emp_id varchar(100),
+name varchar(100),
+dob varchar(50),
+designation varchar(50),
+gender_code varchar(50),
+primary key(emp_id),
+foreign key(gender_code) references employee_gender(gender_code) on delete restrict,
+foreign key(designation) references designations(roll_id) on delete restrict
+
+)
+
+
+
+
+--#4.outsource employees table
+
+CREATE TABLE outsource_employees(
+emp_id varchar(100),
+name varchar(100),
+source_company varchar(200),
+designation varchar(50),
+gender_code varchar(50),
+primary key(emp_id),
+foreign key(gender_code) references employee_gender(gender_code) on delete restrict,
+foreign key(source_company) references outsource_companies(company_id) on delete restrict
+
+)
+
+
+
+
+
+
+
+
+
+
