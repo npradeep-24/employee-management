@@ -1,0 +1,33 @@
+--inesrting data
+
+INSERT INTO employee_gender values('female'),('male');
+
+
+INSERT INTO designations values('mng1','branch manager',120000),('mng2','team manager',95000),('mng3','team lead',90000);
+
+INSERT INTO outsorce_companies values('tech1','tech info pvt ltd'),('tech2','tech solutions pvt ltd');
+
+
+
+
+INSERT INTO onboarding_employees values('id001','nikil','dgshd@gmail.com','2007-08-14','gc');
+
+
+
+INSERT INTO current_employees values('emp1','kumar','2007-08-12','mng1','male'),('emp2','nikil','2005-01-11','mng2','male');
+
+
+INSERT INTO old_employees values('oemp1','syam','2008-12-09','mng1','male'),('oemp2','kumar syam','2002-11-09','mng2','male');
+
+
+INSERT INTO outsource_employees values('osemp1','syam kumar','tech1','mng1','male')
+
+
+
+
+
+
+
+
+
+
